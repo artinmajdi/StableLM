@@ -12,7 +12,7 @@ This repository contains Stability AI's ongoing development of the StableLM seri
 - Released StableVicuna-13B, our RLHF fine-tune of [Vicuna-13B v0](https://huggingface.co/lmsys/vicuna-13b-delta-v0), which itself is a fine-tune of [LLaMA-13B](https://github.com/facebookresearch/llama). Delta weights over the original Llama model is released under ([CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
 
 *April 20, 2023*
-
+git submodule add --name vicuna https://huggingface.co/CarperAI/stable-vicuna-13b-delta submodules/stable-vicuna-13b-delta
 - Released initial set of StableLM-alpha models, with 3B and 7B parameters. 15B and 30B models are on the way. Base models are released under [CC BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 - Try to chat with our 7B model, `StableLM-Tuned-Alpha-7B`, on [Hugging Face Spaces](https://huggingface.co/spaces/stabilityai/stablelm-tuned-alpha-chat).
@@ -97,11 +97,11 @@ The system prompt is
 ```
 
 ## Fun with StableLM-Tuned-Alpha
-This section contains a collection of fun cherry-picked examples of what you can do with `stablelm-tuned-alpha`. 
+This section contains a collection of fun cherry-picked examples of what you can do with `stablelm-tuned-alpha`.
 
 <details>
   <summary>Chit-Chat</summary>
-  
+
 ```
 User: Hey! My name is John nice to meet you!
 
@@ -123,12 +123,12 @@ User: Ah! Right. I can order a bouquet for her online and get it delivered! Than
 
 StableLM: You’re very welcome! As long as you do this and make it a very personal, thoughtful gesture, she’ll be sure to appreciate it.
  ```
- 
+
 </details>
 
 <details>
   <summary>Formal Writing</summary>
-  
+
   ```
  User: What would you say to a friend who is graduating high school?
 
@@ -223,7 +223,7 @@ He now knows the ins and outs of the TensorFlow programming language, and knows 
 
 ```
 
-### Humor 
+### Humor
 
 ```
 User: What do you know about the League of Legends champion Zed? Write a short bio
@@ -240,7 +240,7 @@ Zed has been a part of many memorable games, and his success in these games help
 
 User: Write a funny conversation after a team fight between Zed and Teemo
 
-StableLM: 
+StableLM:
 Teemo: “Hey Zed, great game today. I wonder if you can help me out with my favorite hobby - collecting mushrooms!”
 Zed: “Teemo, please. I’m not a mushroom collector.”
 Teemo: “But of course, you are. You have the best taste in the game.”
@@ -280,11 +280,11 @@ fib_sequence(10)
 </details>
 
 ## Selected failure modes of StableLM-Tuned-Alpha
-This section contains a collection of selected failure modes of `stablelm-tuned-alpha`. 
+This section contains a collection of selected failure modes of `stablelm-tuned-alpha`.
 
 <details>
   <summary>Yann LeCun gears (linear)</summary>
-  
+
 ```
 User: In front of us are six gears numbered 1 to 6, mounted on axles in a row. Each gear is engaged with the next gear. If gear number 3 is rotated clockwise, in which direction will gears 1 and 6 rotate?
 
@@ -292,12 +292,12 @@ StableLM: Each gear is engaged with the next gear after every other gear, so tha
 
 To determine the direction in which gears 1 and 6 will rotate, we need to look at the direction of the input force. Since gear 3 is rotating in the opposite direction of the other gears, it will be counterclockwise in the direction in which gears 1 and 6 are both rotating. Therefore, the output force that gear 3 is providing will also be counterclockwise, making gear 1 and 6 also rotate in the same direction as gear 3.
  ```
- 
+
 </details>
 
 <details>
   <summary>Yann LeCun gears (circular)</summary>
-  
+
 ```
 User: 7 axles are equally spaced around a circle. A gear is placed on each axle such that each gear is engaged with the gear to its left and the gear to its right. The gears are numbered 1 to 7 around the circle. If gear 3 were rotated clockwise, in which direction would gear 7 rotate?
 
@@ -309,7 +309,7 @@ According to the problem, gear 3 is situated at (d/2, 2 degrees) and the gears a
 
 Therefore, the answer is d = (7/2) * 2 = 5 degrees in total.
  ```
- 
+
 </details>
 
 ## Request for Help
